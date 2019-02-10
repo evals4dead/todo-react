@@ -44,7 +44,7 @@ class TodoContainer extends Component {
         this.setState({
             ...this.state,
             todos: todos.concat({
-                id: todos[todos.length - 1].id + 1,
+                id: todos.length === 0 ? 0 : todos[todos.length - 1].id + 1,
                 title: todoInput,
                 isEditing: false
             }),
