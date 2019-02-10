@@ -25,7 +25,7 @@ const TodoItem = ({todo, removeTodo, onToggleEdit, changeEditTodoInput}) => {
                     type="text" 
                     name="editTodoInput" 
                     value={todo.title}
-                    onChange={onChange} /> : todo.title
+                    onChange={onChange} /> : <div className="TodoTitle">{todo.title}</div>
             }
             <div className="Icons">
                 <div className="Icon" onClick={onToggle}>
