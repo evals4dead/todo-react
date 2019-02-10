@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import TodoContainer from 'containers/TodoContainer';
 import './styles/index.scss';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<TodoContainer />, document.getElementById('root'));
 serviceWorker.unregister();
