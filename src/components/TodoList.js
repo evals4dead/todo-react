@@ -4,28 +4,30 @@ import TodoTitle from './TodoTitle';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem'
 
-const TodoList = () => {
+const TodoList = ({todos, 
+    onChangeInput, 
+    todoInput, 
+    insertTodo, 
+    removeTodo,
+    onToggleEdit, 
+    changeEditTodoInput}) => {
+
+    const todoItemsList = todos.map(todo => <TodoItem 
+                                                key={todo.id} 
+                                                todo={todo} 
+                                                removeTodo={removeTodo}
+                                                onToggleEdit={onToggleEdit}
+                                                changeEditTodoInput={changeEditTodoInput} />);
+
     return (
         <div className="TodoListWrapper">
             <TodoTitle />
-            <TodoInput />
+            <TodoInput 
+                onChange={onChangeInput} 
+                todoInput={todoInput} 
+                insertTodo={insertTodo} />
             <div className="TodoItemListWrapper">
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
-                <TodoItem />
+                {todoItemsList}
             </div>
         </div>
     );
